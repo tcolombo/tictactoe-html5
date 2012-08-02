@@ -1,0 +1,143 @@
+.center {
+  margin: auto;
+}
+/*** Général ***/
+@font-face {
+  font-family: 'QikkiRegRegular';
+  src: url('../fonts/Qarmic_sans_Abridged-webfont.eot');
+  src: url('../fonts/Qarmic_sans_Abridged-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Qarmic_sans_Abridged-webfont.woff') format('woff'), url('../fonts/Qarmic_sans_Abridged-webfont.ttf') format('truetype'), url('../fonts/Qarmic_sans_Abridged-webfont.svg#QikkiRegRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: 'QikkiRegRegular', Arial, serif;
+  font-size: 14pt;
+}
+/*** Zone de Jeu ***/
+#gameZone {
+  width: 800px;
+  height: 600px;
+  margin: auto;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-top: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  border-left: 2px solid #000000;
+  border-right: 2px solid #000000;
+  background-color: #ffffff;
+  box-shadow: 8px 8px 12px #aaaaaa;
+  -webkit-box-shadow: 8px 8px 12px #aaaaaa;
+  -moz-box-shadow: 8px 8px 12px #aaaaaa;
+}
+/*** Damier ***/
+#array {
+  display: table;
+  margin: 10px;
+}
+#line_1,
+#line_2,
+#line_3 {
+  display: table_row;
+}
+.case {
+  display: table-cell;
+  width: 128px;
+  height: 128px;
+  margin: 0;
+  padding: 0;
+  background-color: #c7b299;
+}
+#c11,
+#c12,
+#c13,
+#c21,
+#c22,
+#c23 {
+  border-bottom: 2px solid #000000;
+}
+#c21,
+#c22,
+#c23,
+#c31,
+#c32,
+#c33 {
+  border-top: 2px solid #000000;
+}
+#c12,
+#c13,
+#c22,
+#c23,
+#c32,
+#c33 {
+  border-left: 2px solid #000000;
+}
+#c11,
+#c12,
+#c21,
+#c22,
+#c31,
+#c32 {
+  border-right: 2px solid #000000;
+}
+.overCase {
+  background-color: #72f3f1;
+}
+/*** Jetons ***/
+#tokens {
+  position: relative;
+  top: -256px;
+  left: 512px;
+  width: 256px;
+  height: 384px;
+  border-top: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  border-left: 2px solid #000000;
+  border-right: 2px solid #000000;
+  background-color: #ffffff;
+  box-shadow: 8px 8px 12px #aaaaaa;
+  -webkit-box-shadow: 8px 8px 12px #aaaaaa;
+  -moz-box-shadow: 8px 8px 12px #aaaaaa;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+.token {
+  float: left;
+  width: 128px;
+  height: 128px;
+  background: url("../images/tokens.png") 0 0 no-repeat;
+}
+.token_auto {
+  float: left;
+  width: 128px;
+  height: 128px;
+  background: url("../images/tokens.png") -128px 0 no-repeat;
+}
+.draggable:hover {
+  cursor: pointer;
+}
+/*** Fenêtre de notification ***/
+#notification {
+  position: relative;
+  display: none;
+  top: -512px;
+  z-index: 10;
+  width: 400px;
+  height: 100px;
+  padding-top: 20px;
+  text-align: center;
+  background-color: #3e3e3e;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-top: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  border-left: 2px solid #000000;
+  border-right: 2px solid #000000;
+  background-color: #ffffff;
+  box-shadow: 8px 8px 12px #aaaaaa;
+  -webkit-box-shadow: 8px 8px 12px #aaaaaa;
+  -moz-box-shadow: 8px 8px 12px #aaaaaa;
+  margin: auto;
+}

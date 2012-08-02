@@ -1,0 +1,218 @@
+@screen_width: 800px;
+@screen_height: 600px;
+@tokens_width: 256px;
+@tokens_height: 384px;
+@notify_width: 400px;
+@notify_height: 100px;
+
+@size: 128px;
+@bg_case: #c7b299;
+@color_shadow: #aaa;
+@bg_notify: #3e3e3e;
+@bg_overCase: #72f3f1;
+
+.tokenHuman ()
+{
+  background: url("../images/tokens.png") 0 0 no-repeat;
+}
+
+.tokenServer ()
+{
+  background: url("../images/tokens.png") -@size 0 no-repeat;
+}
+
+.rounded-corners (@radius: 5px)
+{
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+.shadow (@color: @color_shadow)
+{
+  box-shadow: 8px 8px 12px @color;
+  -webkit-box-shadow: 8px 8px 12px @color;
+  -moz-box-shadow: 8px 8px 12px @color;
+}
+
+.border-top (@color: #000)
+{
+  border-top: 2px solid @color;
+}
+
+.border-bottom (@color: #000)
+{
+  border-bottom: 2px solid @color;
+}
+
+.border-left (@color: #000)
+{
+  border-left: 2px solid @color;
+}
+
+.border-right (@color: #000)
+{
+  border-right: 2px solid @color;
+}
+
+.box (@color: #000, @bgcolor: #fff)
+{
+  .border-top(@color);
+  .border-bottom(@color);
+  .border-left(@color);
+  .border-right(@color);
+
+  background-color: @bgcolor;
+
+  .shadow
+}
+
+.center
+{
+  margin: auto;
+}
+
+
+/*** Général ***/
+@font-face 
+{
+  font-family: 'QikkiRegRegular';
+  src: url('../fonts/Qarmic_sans_Abridged-webfont.eot');
+  src: url('../fonts/Qarmic_sans_Abridged-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Qarmic_sans_Abridged-webfont.woff') format('woff'),
+       url('../fonts/Qarmic_sans_Abridged-webfont.ttf') format('truetype'),
+       url('../fonts/Qarmic_sans_Abridged-webfont.svg#QikkiRegRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body
+{
+  font-family: 'QikkiRegRegular', Arial, serif;
+  font-size: 14pt;
+}
+
+/*** Zone de Jeu ***/
+
+#gameZone
+{
+  width: @screen_width;
+  height: @screen_height;
+
+  .center;
+  .rounded-corners;
+  .box;
+}
+
+
+/*** Damier ***/
+
+#array
+{
+  display: table;
+
+  margin: 10px;
+}
+
+#line_1, #line_2, #line_3
+{
+  display: table_row;
+}
+
+.case
+{
+  display: table-cell;
+  width: @size;
+  height: @size;
+
+  margin: 0;
+  padding: 0;
+
+  background-color: @bg_case;
+}
+
+#c11, #c12, #c13, #c21, #c22, #c23
+{
+  .border-bottom;
+}
+
+#c21, #c22, #c23, #c31, #c32, #c33
+{
+  .border-top;
+}
+
+#c12, #c13, #c22, #c23, #c32, #c33
+{
+  .border-left;
+}
+
+#c11, #c12, #c21, #c22, #c31, #c32
+{
+  .border-right;
+}
+
+.overCase
+{
+  background-color: @bg_overCase;
+}
+
+
+/*** Jetons ***/
+
+#tokens
+{
+  position: relative;
+  top: -@size * 2;
+  left: @size * 4;
+  width: @tokens_width;
+  height: @tokens_height;
+  .box;
+  .rounded-corners;
+}
+
+.generic_token ()
+{
+  float: left;
+
+  width: @size;
+  height: @size;
+}
+
+.token
+{
+  .generic_token;
+  .tokenHuman;
+}
+
+.token_auto
+{
+  .generic_token;
+  .tokenServer;
+}
+
+.draggable:hover
+{
+  cursor: pointer;
+}
+
+
+/*** Fenêtre de notification ***/
+#notification
+{
+  position: relative; 
+  display: none;
+  top: -@size * 4;
+  z-index: 10;
+
+  width: @notify_width;
+  height: @notify_height;
+
+  padding-top: 20px;
+
+  text-align: center;
+  background-color: @bg_notify;
+
+  .rounded-corners;
+  .box;
+  .center;
+}

@@ -1,0 +1,13 @@
+Tic Tac Toe html5 v1.0
+Tristan Colombo <tristan.colombo@info2dev.com>
+Licence GPL v3
+
+----------------------------------------------
+
+This project is a demonstration of html5 technologies in a little game :
+  - external font with @font-face
+  - css sprites
+  - audio sprites
+  - drag and drop
+  - local storage
+  - websockets (using socket.io)

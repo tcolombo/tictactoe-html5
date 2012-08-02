@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe en html5</title>
+    <script src="script/jquery-1.7.2.min.js"></script>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="script/control.js"></script>
+    <link rel="stylesheet" href="media/style/tictactoe.css" />
+  </head>
+
+  <body>
+    <audio id="game_sounds" preload>
+      <source src="media/audio/sounds.mp3" type="audio/mp3" />
+      <source src="media/audio/sounds.ogg" type="audio/ogg" />
+    </audio>
+
+    <div id="gameZone">
+      <div id="array">
+        <div id="line_1">
+          <div id="c11" class="case"></div>
+          <div id="c12" class="case"></div>
+          <div id="c13" class="case"></div>
+        </div>
+        <div id="line_2">
+          <div id="c21" class="case"></div>
+          <div id="c22" class="case"></div>
+          <div id="c23" class="case"></div>
+        </div>
+        <div id="line_3">
+          <div id="c31" class="case"></div>
+          <div id="c32" class="case"></div>
+          <div id="c33" class="case"></div>
+        </div>
+      </div>
+      <div id="tokens">
+        <div id="t_1" class="token"></div>
+        <div id="t_2" class="token"></div>
+        <div id="t_3" class="token"></div>
+        <div id="t_4" class="token"></div>
+        <div id="t_5" class="token"></div>
+      </div>
+      <div id="notification"></div>
+    </div>
+  </body>
+</html>
